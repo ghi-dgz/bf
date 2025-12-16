@@ -32,8 +32,8 @@ def bf(code, input_tape, input_auto_zero, num_zeros=1, ascii=False):
                     out += code[i]
         return out
     
-    code = remove_non_commands(code, commands)
     code = remove_comments(code, commands)
+    code = remove_non_commands(code, commands)
     i = 0
     while i < len(code):
         char = code[i]
