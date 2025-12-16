@@ -1,5 +1,4 @@
-/*
-[in case you're not using my interpreter] >+<
+[/*
 https://www.ascii-code.com/
 w 119
 a 97
@@ -8,7 +7,7 @@ d 100
 
 y 121
 n 110
-*/
+*/]
 
 ,                                    take input
 [->+>+>+>+<<<<]                     copy x4
