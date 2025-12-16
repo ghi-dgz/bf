@@ -71,6 +71,6 @@ incrementing program
 >>[>]<+                increment the last value of the array
 [->+>+<<]>>[-<<+>>]<     copy value across
 ----------[>-<[-]]>+[-<+>]<      lossy not_10 function
-[<->>]<[<]<           move the increment if last value 0 then return to input
+ok so i need to finish this
 ?
 ,]                     loop until end of input
