@@ -146,4 +146,4 @@ if __name__ == "__main__":
         with open(sys.argv[1], 'r') as file:
             bf(file.read(), input_tape=input_tape, input_auto_zero=input_auto_zero)
     else:
-        print("Usage: python bf.py [file] [args]")
+        print("Usage: python bf_intp.py [file] [args]")
