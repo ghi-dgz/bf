@@ -1,6 +1,6 @@
 import time
 import sys
-def bf(code, input_tape, input_auto_zero, num_zeros=1, ascii=False):
+def bf(code, input_tape, input_auto_zero, num_zeros=1, ascii=False, ngg=False):
     input_read_pos = 0
     tape = [0] * num_zeros
     tickerpos = 0
@@ -94,7 +94,10 @@ def bf(code, input_tape, input_auto_zero, num_zeros=1, ascii=False):
             def_steps += 1
             if len(input_tape) <= input_read_pos and not input_auto_zero:
                 if last_print == "output": print("")
-                input_tape += input("input: ")
+                if ngg:
+                    input_tape += input("Enter a number: ")
+                else:
+                    input_tape += input("input: ")
 
             if len(input_tape) > input_read_pos:
                 tape[tickerpos] = ord(input_tape[input_read_pos]) % 256
@@ -143,7 +146,13 @@ if __name__ == "__main__":
         input_tape = sys.argv[2] if (len(sys.argv) > 2 and sys.argv[2][0:2] != "--") else ""
         input_auto_zero = False if input_tape == "" else True
 
+        if "ngg" in sys.argv[1]: 
+            input_auto_zero = False
+            ngg = True
+        else:
+            ngg = False
+
         with open(sys.argv[1], 'r') as file:
-            bf(file.read(), input_tape=input_tape, input_auto_zero=input_auto_zero)
+            bf(file.read(), input_tape=input_tape, input_auto_zero=input_auto_zero, ngg=ngg)
     else:
         print("Usage: python bf.py [file] [args]")
