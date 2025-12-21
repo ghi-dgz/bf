@@ -88,7 +88,12 @@ def bf(code, input_tape, input_auto_zero, num_zeros=1, ascii=False, ngg=False):
             last_print = "debug"
         elif char == '.':
             def_steps += 1
-            print(chr(tape[tickerpos]), end='')
+            if tape[tickerpos] == 150:
+                print("–",end='')
+            elif tape[tickerpos] == 151:
+                print('—',end='')
+            else:
+                print(chr(tape[tickerpos]), end='')
             last_print = "output"
         elif char == ',':
             def_steps += 1
